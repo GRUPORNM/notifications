@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="TQA.NOTIF_OVW_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <EntityType Name="xTQAxNOTIFICATIONS_HEADERType" sap:label="Data Definition for PM Notifications Header" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="qmnum"/>
+                </Key>
+                <Property Name="qmnum" Type="Edm.String" Nullable="false" MaxLength="12" sap:display-format="UpperCase" sap:label="Notification No." sap:quickinfo="Notification Number"/>
+                <Property Name="qmtxt" Type="Edm.String" MaxLength="40" sap:label="Description" sap:quickinfo="Short Text"/>
+                <Property Name="priok" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Priority"/>
+                <Property Name="priokx" Type="Edm.String" MaxLength="20" sap:label="Priority" sap:quickinfo="Priority Text" sap:value-list="standard"/>
+                <Property Name="qmdat" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Notification Date" sap:quickinfo="Date of Notification"/>
+                <Property Name="strmn" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:filter-restriction="interval" sap:label="Required Start Date" sap:quickinfo="Required start date"/>
+                <Property Name="strur" Type="Edm.Time" Precision="0" sap:label="Required Start Time"/>
+                <Property Name="ltrmn" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:filter-restriction="interval" sap:label="Required End Date"/>
+                <Property Name="ltrur" Type="Edm.Time" Precision="0" sap:label="Required End Time"/>
+                <Property Name="aufnr" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Maintenance Order No." sap:quickinfo="Order Number"/>
+                <Property Name="qmdab" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Completion Date" sap:quickinfo="Date for Notification Completion"/>
+                <Property Name="qmzab" Type="Edm.Time" Precision="0" sap:label="Completion Time" sap:quickinfo="Completion Time of Notification"/>
+                <Property Name="herktx" Type="Edm.String" MaxLength="60" sap:label="Notification Origin" sap:quickinfo="Short Text for Fixed Values"/>
+                <Property Name="NotifPriorityCriticality" Type="Edm.Byte"/>
+                <NavigationProperty Name="to_notification_priority_vh" Relationship="TQA.NOTIF_OVW_SRV.assoc_E65C07B537A56BECDB0969AB31306BCB" FromRole="FromRole_assoc_E65C07B537A56BECDB0969AB31306BCB" ToRole="ToRole_assoc_E65C07B537A56BECDB0969AB31306BCB"/>
+            </EntityType>
+            <EntityType Name="xTQAxNOTIFICATION_PRIO_VHType" sap:label="Value Help for Notification Priority" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="artpr"/>
+                    <PropertyRef Name="priok"/>
+                </Key>
+                <Property Name="artpr" Type="Edm.String" Nullable="false" MaxLength="2" sap:display-format="UpperCase" sap:label="Priority Type"/>
+                <Property Name="priok" Type="Edm.String" Nullable="false" MaxLength="1" sap:display-format="UpperCase" sap:label="Priority"/>
+                <Property Name="priokx" Type="Edm.String" MaxLength="20" sap:label="Priority Text"/>
+            </EntityType>
+            <Association Name="assoc_E65C07B537A56BECDB0969AB31306BCB" sap:content-version="1">
+                <End Type="TQA.NOTIF_OVW_SRV.xTQAxNOTIFICATIONS_HEADERType" Multiplicity="1" Role="FromRole_assoc_E65C07B537A56BECDB0969AB31306BCB"/>
+                <End Type="TQA.NOTIF_OVW_SRV.xTQAxNOTIFICATION_PRIO_VHType" Multiplicity="1" Role="ToRole_assoc_E65C07B537A56BECDB0969AB31306BCB"/>
+            </Association>
+            <EntityContainer Name="TQA_NOTIF_OVW_SRV_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="xTQAxNOTIFICATIONS_HEADER" EntityType="TQA.NOTIF_OVW_SRV.xTQAxNOTIFICATIONS_HEADERType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="xTQAxNOTIFICATION_PRIO_VH" EntityType="TQA.NOTIF_OVW_SRV.xTQAxNOTIFICATION_PRIO_VHType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <AssociationSet Name="assoc_E65C07B537A56BECDB0969AB31306BCB" Association="TQA.NOTIF_OVW_SRV.assoc_E65C07B537A56BECDB0969AB31306BCB" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="xTQAxNOTIFICATIONS_HEADER" Role="FromRole_assoc_E65C07B537A56BECDB0969AB31306BCB"/>
+                    <End EntitySet="xTQAxNOTIFICATION_PRIO_VH" Role="ToRole_assoc_E65C07B537A56BECDB0969AB31306BCB"/>
+                </AssociationSet>
+            </EntityContainer>
+            <Annotations Target="TQA.NOTIF_OVW_SRV.xTQAxNOTIFICATIONS_HEADERType/priokx" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Value Help for Notification Priority"/>
+                        <PropertyValue Property="CollectionPath" String="xTQAxNOTIFICATION_PRIO_VH"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="priokx"/>
+                                    <PropertyValue Property="ValueListProperty" String="priokx"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="TQA.NOTIF_OVW_SRV.TQA_NOTIF_OVW_SRV_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TQA.NOTIF_OVW_SRV.TQA_NOTIF_OVW_SRV_Entities/xTQAxNOTIFICATIONS_HEADER" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="strmn"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="ltrmn"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <atom:link rel="self" href="http://erpdev.rnm.local:50000/sap/opu/odata/tqa/NOTIF_OVW_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://erpdev.rnm.local:50000/sap/opu/odata/tqa/NOTIF_OVW_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

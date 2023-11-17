@@ -1,0 +1,50 @@
+<mvc:View controllerName="notificationsoverview.controller.Items"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:ux="sap.uxap"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:core="sap.ui.core">
+    <Page title="{qmnum} | {qmtxt}" showNavButton="true" navButtonPress="onNavBack">
+        <content>
+            <Panel id="_IDGenPanel1">
+                <form:SimpleForm id="notificationInfoForm" editable="false" layout="ColumnLayout" title="{i18n>notification_info}" columnsM="2" columnsL="3" columnsXL="4" class="sapUiTinyMarginTop">
+                    <form:content>
+                        <Label text="{i18n>priority}"/>
+                        <Text text="{path: 'priok', formatter: '.formatter.notificationstatus'}" />
+
+                        <Label text="{i18n>notif_status}"/>
+                        <Text text="{notif_status}" />
+
+                        <Label text="{i18n>startdate}"/>
+                        <Text text="{path: 'strmn', formatter: '.formatter.dateFormat'}" />
+
+                        <Label text="{i18n>enddate}"/>
+                        <Text text="{path: 'ltrmn', formatter: '.formatter.dateFormat'}" />
+
+                        <Label text="{i18n>starttime}"/>
+                        <Text text="{path: 'strur', formatter: '.formatter.timeFormat'}" />
+
+                        <Label text="{i18n>endtime}"/>
+                        <Text text="{path: 'ltrur', formatter: '.formatter.timeFormat'}" />
+
+                        <Label text="{i18n>conclusiondate}"/>
+                        <Text text="{path: 'qmdab', formatter: '.formatter.dateFormat'}" />
+                    </form:content>
+                </form:SimpleForm>
+                <form:SimpleForm id="notificationInfoForm2" editable="false" layout="ColumnLayout" title="{i18n>equipment_info}" columnsM="2" columnsL="3" columnsXL="4">
+                    <form:content>
+                        <Label text="{i18n>equipment}"/>
+                        <Text text="{eqktx}" />
+
+                        <Label text="{i18n>category}"/>
+                        <Text text="{eqtypx}" />
+
+                        <Label text="{i18n>type}"/>
+                        <Text text="{eartx}" />
+                    </form:content>
+                </form:SimpleForm>
+            </Panel>
+        </content>
+    </Page>
+</mvc:View>
