@@ -5,7 +5,7 @@
     xmlns:f="sap.f"
     xmlns:form="sap.ui.layout.form"
     xmlns:core="sap.ui.core">
-    <Page title="{qmnum} | {qmtxt}" showNavButton="true" navButtonPress="onNavBack">
+    <Page title="{qmnum} | {qmtxt}" showNavButton="false" navButtonPress="onNavBack">
         <content>
             <Panel id="_IDGenPanel1">
                 <form:SimpleForm id="notificationInfoForm" editable="false" layout="ColumnLayout" title="{i18n>notification_info}" columnsM="2" columnsL="3" columnsXL="4" class="sapUiTinyMarginTop">

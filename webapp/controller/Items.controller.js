@@ -19,6 +19,17 @@ sap.ui.define([
                 this.setModel(oViewModel, "itemsView");
                 this.getOwnerComponent().getRouter().attachRouteMatched(this.onObjectMatched, this);
                 this.getRouter().attachRouteMatched(this.getUserAuthentication, this);
-            }
+            },
+
+            onAfterRendering: function () {
+                var that = this;
+                sessionStorage.setItem("goToLaunchpad", "");
+                window.addEventListener("message", function (event) {
+                    var data = event.data;
+                    if (data.action == "goToMainPage") {
+                        that.onNavBack();
+                    }
+                });
+            },
         });
     });
