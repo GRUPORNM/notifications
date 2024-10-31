@@ -26,19 +26,19 @@ sap.ui.define([], function () {
             if (oStatus){
                 switch (oStatus) {
                     case '4':
-                        return "Low";
+                        return this.getResourceBundle().getText("Low");
                         break;
     
                     case '1':
-                        return "Very High";
+                        return this.getResourceBundle().getText("VeryHigh");
                         break;
     
                     case '2':
-                        return "High";
+                        return this.getResourceBundle().getText("High");
                         break;
     
                     case '3':
-                        return "Medium";
+                        return this.getResourceBundle().getText("Medium");
                         break;
                 }
             }

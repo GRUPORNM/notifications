@@ -1,4 +1,4 @@
-specVersion: "2.6"
+specVersion: "3.1"
 metadata:
   name: notificationsoverview
 type: application
@@ -8,15 +8,15 @@ server:
       afterMiddleware: compression
       configuration:
         ignoreCertError: false
+        backend:
+          - path: /sap
+            url: http://erpdd2.rnm.local:50000
+            client: "300"
         ui5:
           path:
             - /resources
             - /test-resources
           url: https://ui5.sap.com
-        backend:
-          - path: /sap
-            url: http://erpdev.rnm.local:50000/
-            client: "610"
     - name: fiori-tools-appreload
       afterMiddleware: compression
       configuration:
@@ -27,4 +27,4 @@ server:
       afterMiddleware: fiori-tools-appreload
       configuration:
         component: notificationsoverview
-        ui5Theme: sap_horizon
+        ui5Theme: sap_fiori_3
